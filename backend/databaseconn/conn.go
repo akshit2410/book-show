@@ -2,7 +2,6 @@
 package databaseconn
 import(
     "fmt"
-
     "database/sql"
     R "book_show/backend/auth"
   _ "github.com/go-sql-driver/mysql"
