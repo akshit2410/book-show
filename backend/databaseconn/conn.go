@@ -9,7 +9,7 @@ import(
 )
 //connecting to DB
 func Connect() *sql.DB {
-  db,err := sql.Open("mysql","root:akshit@tcp(db)/trell")
+  db,err := sql.Open("mysql","root:akshit@tcp(db)/showtime")
   if err!=nil {
       fmt.Println(err.Error())
   }
