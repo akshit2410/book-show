@@ -20,11 +20,11 @@ COPY . .
 
 RUN go build -o server .
 
-EXPOSE 3000
+EXPOSE $PORT
 
 RUN go build -o server1 .
 
-EXPOSE 1234
+EXPOSE $PORT
 
 CMD ["./server"]
 
