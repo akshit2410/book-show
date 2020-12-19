@@ -2,7 +2,7 @@ package main
 import (
   "fmt"
   R "book_show/backend/auth"
-  "os"
+  // "os"
   "net/http"
   "github.com/gin-gonic/gin"
    "github.com/gin-contrib/cors"
@@ -17,10 +17,11 @@ type Use struct {
 }
 var u Use
 func main()  {
-  port := os.Getenv("PORT")
- if port == "" {
-   port = "3000"
- }
+  // port := os.Getenv("PORT")
+ // if port == "" {
+ //   port = "3000"
+ // }
+ port := "3000"
  db.Connect()
  type REG =R.Register
  type LOG = R.Login
