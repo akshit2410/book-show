@@ -2,15 +2,30 @@ FROM golang:latest
 
 LABEL maintainer="akshit <akshit19991024@gmail.com>"
 
-MKDIR /app/src
+RUN mkdir -p /app/src
 
 WORKDIR /app/src
 
-COPY go
 COPY go.mod .
 
 COPY go.sum .
 
 RUN go mod download
 
+COPY backend/server.go .
+
+COPY frontend/server1.go .
+
 COPY . .
+
+RUN go build -o server .
+
+EXPOSE 3000
+
+CMD ["./server"]
+
+RUN go build -o server1 .
+
+EXPOSE 1234
+
+CMD ["./server1"]
