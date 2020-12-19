@@ -35,13 +35,13 @@ To use it on your local host you can use Following ways:
     
 2) Using Docker desktop :-
 
-  - easy as ever simply run the docker.yaml file which is the folder which contain this project ( docker-compose up ).
+    - easy as ever simply run the docker.yaml file which is the folder which contain this project ( docker-compose up ).
   
-  - now you will have everything set up go to localhost 8080 for phpmyadmin .(username:root ,password:akshit).
+    - now you will have everything set up go to localhost 8080 for phpmyadmin .(username:root ,password:akshit).
   
-  - now make a new database in that namely showtime(you can change the name make sure u change the name in conn.go file too where we made database connection).
+    - now make a new database in that namely showtime(you can change the name make sure u change the name in conn.go file too where we made database connection).
   
-  - in showtime database import the file showtime.sql which you have in the the main folder of this project.
-  - you are good to go your front end will be on localhost:2404.
+    - in showtime database import the file showtime.sql which you have in the the main folder of this project.
+    - you are good to go your front end will be on localhost:2404.
   
   Enjoy :)
