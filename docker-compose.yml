@@ -4,7 +4,13 @@ services:
   web:
     build: .
     ports:
-      - "3000:80"
+      - "3000:3000"
+  web-client:
+    build: ./frontend/
+    ports:
+      - "2404:2404"
+    links:
+      - web
   db:
     image: mariadb:10.3
     restart: always
