@@ -12,20 +12,12 @@ COPY go.sum .
 
 RUN go mod download
 
-COPY backend/server.go .
-
 COPY frontend/server1.go .
 
 COPY . .
 
-RUN go build -o server .
-
-EXPOSE $PORT
-
 RUN go build -o server1 .
 
 EXPOSE $PORT
-
-CMD ["./server"]
 
 CMD ["./server1"]
