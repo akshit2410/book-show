@@ -14,8 +14,6 @@ RUN go mod download
 
 COPY backend/server.go .
 
-COPY frontend/server1.go .
-
 COPY . .
 
 RUN go build -o server .
@@ -23,9 +21,3 @@ RUN go build -o server .
 EXPOSE 3000
 
 CMD ["./server"]
-
-RUN go build -o server1 .
-
-EXPOSE 1234
-
-CMD ["./server1"]
