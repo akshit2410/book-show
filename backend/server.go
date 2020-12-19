@@ -17,7 +17,8 @@ type Use struct {
 }
 var u Use
 func main()  {
-  // port := os.Getenv("PORT")
+    fmt.Println("hey its working backend")
+ //  port := os.Getenv("PORT")
  // if port == "" {
  //   port = "3000"
  // }
