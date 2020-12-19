@@ -15,18 +15,9 @@ COPY . .
 
 COPY backend/server.go .
 
-RUN go build -o server .
+RUN go build  ./backend/server.go
 
-EXPOSE $PORT
+EXPOSE 3000
 
-COPY frontend/server1.go .
-
-RUN go build -o server1 .
-
-EXPOSE $PORT
 
 CMD ["./server"]
-
-CMD ["./server1"]
-
-ENTRYPOINT ["app", "-f=7", "-s=9"]
