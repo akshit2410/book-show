@@ -6,7 +6,7 @@ To use it on your local host you can use Following ways:
 1) Using go in your pc locally -:
     -Download the zip file ,unzip it your desired folder.
     -Download and install go in pc.
-    -now using "go get -v -u [name of repo]" ,download gin/gonic,bycrpt,cors,contrib static (use google to find the proper links to them)
+    -now using "go get -v -u [name of repo]" ,download gin/gonic,bycrpt,cors,contrib static (use google to find the proper links to them).
     -now go to the backend folder through your cmd.
     -And run "go build server.go" this will build a server.exe file for you in the same folder.
     -in your cmd simply run "server.exe" this will run your backend service for website at localhost:3000 in your browser
