@@ -20,9 +20,9 @@ COPY . .
 
 RUN go build -o server .
 
-RUN go build -o server1 .
-
 EXPOSE 3000
+
+RUN go build -o server1 .
 
 EXPOSE 1234
 
