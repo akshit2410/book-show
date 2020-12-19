@@ -9,7 +9,7 @@ func main()  {
   port := os.Getenv("PORT")
 
  if port == "" {
-   port = "1234"
+   port = "2404"
  }
   server :=gin.Default()
   server.Use(static.Serve("/", static.LocalFile("./templates", true)))
