@@ -18,6 +18,6 @@ COPY backend/server.go .
 
 RUN go build -o server .
 
-EXPOSE $PORT
+EXPOSE 3000
 
 CMD ["./server"]
