@@ -1,4 +1,5 @@
-const data = fetch('http://localhost:3000/adminhome',{
+var url='http://localhost:3000'
+const data = fetch(url.concat('/home'),{
       method:'GET',
       headers: {
         "Accept": "application/json",
@@ -7,6 +8,9 @@ const data = fetch('http://localhost:3000/adminhome',{
   })
   data.then(response => response.json())
   .then(data => {
+    if (data["status"]===404){
+      location.assign('login.html')
+    }else{
     var container = document.getElementsByClassName('wrapper')
     for(item of data) {
       var obj = JSON.parse(item);
@@ -29,10 +33,8 @@ const data = fetch('http://localhost:3000/adminhome',{
       var p = document.createElement('p')
       p.innerHTML = obj.Mdesc
       div1.appendChild(p)
-      var button = document.createElement("BUTTON")
-      button.type = "submit"
-      button.innerHTML = "BOOK"
-      desc.appendChild(button)
     }
 
+
+  }
   });
