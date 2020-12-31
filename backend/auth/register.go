@@ -24,3 +24,20 @@ type Buy struct {
   MDATE string `json:"mdate" binding : required`
   QUANTITY string `json:"quantity" binding : required`
 }
+
+type Addmovie struct {
+  MNAME string `json:"mname" binding : required`
+  MDESC string `json:"mdesc" binding : required`
+  MDIRECTOR string `json:"mdirector" binding : required`
+  MDURATION string `json:"mduration" binding : required`
+  IMAGE string `json:"image" binding : required`
+}
+
+type Addtime struct {
+  MNAME string `json:"mname" binding : required`
+  START_TIME string `json:"start_time" binding : required`
+  END_TIME string `json:"end_time" binding : required`
+  DATE string `json:"date" binding : required`
+  QUANTITY string `json:"quantity" binding : required`
+  PRICE string `json:"price" binding : required`
+}
