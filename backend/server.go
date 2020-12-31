@@ -27,6 +27,8 @@ func main()  {
  type REG =R.Register
  type LOG = R.Login
  type BUY = R.Buy
+ type ADD = R.Addmovie
+ type ADDT = R.Addtime
  server :=gin.Default()
  server.Use(cors.Default())
 
@@ -38,8 +40,6 @@ func main()  {
     c.Header("Access-Control-Allow-Origin", "*")
     c.JSON(http.StatusOK, gin.H{"message": "item created"})
     })
-
-//get login
 
   // post login
   server.POST("/login",func(c *gin.Context){
@@ -73,7 +73,6 @@ func main()  {
       c.BindJSON(&buy)
       fmt.Println(buy)
       if u.Name !=""{
-        // res := db.Buytickets(buy)
         res := db.Buytickets(buy,u.Name)
         c.JSON(200, gin.H{"status":res})
       }else {
@@ -82,6 +81,7 @@ func main()  {
   })
   //get home
   server.GET("/home",func(c *gin.Context) {
+    fmt.Println(u.Name)
     if u.Name!=""{
     res := db.Connmovies()
     c.JSON(200, res)
@@ -100,6 +100,33 @@ server.GET("/mypurchase",func(c *gin.Context) {
 }
 })
 
+server.POST("/addmovies",func (c *gin.Context)  {
+c.Header("Access-Control-Allow-Origin", "*")
+    var add ADD
+    c.BindJSON(&add)
+    fmt.Println(add)
+    if u.Name !=""{
+      res := db.Addmovie(add)
+      c.JSON(200, gin.H{"status":res})
+    }else {
+      c.JSON(200, gin.H{"status":404})
+    }
+})
+
+
+
+server.POST("/addtimings",func (c *gin.Context)  {
+c.Header("Access-Control-Allow-Origin", "*")
+    var add ADDT
+    c.BindJSON(&add)
+    fmt.Println(add)
+    if u.Name !=""{
+      res := db.Addtime(add)
+      c.JSON(200, gin.H{"status":res})
+    }else {
+      c.JSON(200, gin.H{"status":404})
+    }
+})
 
   //Logout
 server.GET("/logout",func (c* gin.Context)  {
