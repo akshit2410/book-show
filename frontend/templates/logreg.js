@@ -46,19 +46,20 @@
      data.then(response => response.json())
      .then(data => {
        if (data["status"]===200){
-         // const data = fetch('http://localhost:3000/homepage/',{
-         //       method:'GET',
-         //       headers: {
-         //         "Accept": "application/json",
-         //         "Content-Type": "application/json"
-         //     },
          if(data["session"]){
          location.assign('homepage.html');
        }else{
          alert("you arent logged in yet")
        }
 
-       }else if(data["status"]===201) {
+     }else if (data["status"]===500){
+         if(data["session"]){
+         location.assign('adminhome.html');
+       }else{
+         alert("you arent logged in yet")
+       }
+
+     }else if(data["status"]===201) {
          alert("Wrong Password!please, try again")
        }else{
          alert("User doesn't exist")
