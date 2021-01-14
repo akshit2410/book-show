@@ -98,15 +98,16 @@ func Checkuserpresence(log R.Login) (string,int)  {
   }
   return "",0
 }
+
 //logging in a user
 func CheckCredentials(log R.Login) (int,string) {
   hashpass,level := Checkuserpresence(log)
   fmt.Println(level)
   if hashpass != "" {
     if ComparePasswords(hashpass,log.PASSWORD) && level==0 {
-      return 200,log.USER
+      return 200,GenerateToken(log.USER,false)
     }else if ComparePasswords(hashpass,log.PASSWORD) && level==1 {
-      return 500,log.USER
+      return 500,GenerateToken(log.USER,true)
       }else{
       return 201,""
     }
