@@ -47,10 +47,16 @@ func main()  {
         var log LOG
         c.BindJSON(&log)
         fmt.Println(log)
-        res,username := db.CheckCredentials(log)
-        u.Name = username
-         // c.HTML(http.StatusOK, "http://localhost:1234/login.html", nil)
-         c.JSON(200, gin.H{"status":res,"session":u.Name})
+        res,token := db.CheckCredentials(log)
+        fmt.Println(token,res)
+        if token != "" {
+           c.JSON(200, gin.H{"status":res,"session":token})
+        }else{
+          c.JSON(404, gin.H{"status":404})
+        }
+        u.Name = log.USER
+        //  // c.HTML(http.Stat   zusOK, "http://localhost:1234/login.html", nil)
+        //  c.JSON(200, gin.H{"status":res,"session":u.Name})
     })
   // post register
   server.POST("/register",func(c *gin.Context){
